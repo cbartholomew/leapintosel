@@ -23,6 +23,7 @@ function onGesture( gesture ) {
 
 function onCircle( gesture ) {
 	console.log(gesture);
+	Gallery.navigate("right");
 }
 
 function onSwipe( gesture ) {

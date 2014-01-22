@@ -206,7 +206,7 @@ $(function() {
 				
 				// shows the large image that is associated to the $item
 				
-				var $loader	= $rgGallery.find('div.rg-loading').show();
+				var $loader	= $rgGallery.find('div.rg-loading');
 				
 				$items.removeClass('selected');
 				$item.addClass('selected');
@@ -217,7 +217,7 @@ $(function() {
 				
 				$('<img/>').load( function() {
 					
-					$rgGallery.find('div.rg-image').empty().append('<img src="' + largesrc + '"/>');
+					$rgGallery.find('div.rg-image').empty().append('<img class="dicom leap-interactive" src="' + largesrc + '"/>');
 					
 					if( title )
 						$rgGallery.find('div.rg-caption').show().children('p').empty().text( title );
@@ -241,20 +241,43 @@ $(function() {
 				itemsCount	= $items.length; 
 				$esCarousel.elastislide( 'add', $new );
 			
+			},
+			navigate		= function( dir )
+			{
+				// navigate through the large images
+
+				if( anim ) return false;
+				anim	= true;
+
+				if( dir === 'right' ) {
+					if( current + 1 >= itemsCount )
+						current = 0;
+					else
+						++current;
+				}
+				else if( dir === 'left' ) {
+					if( current - 1 < 0 )
+						current = itemsCount - 1;
+					else
+						--current;
+				}
+
+				_showImage( $items.eq( current ) );
+				
 			};
 		
 		return { 
 			init 		: init,
-			addItems	: addItems
+			addItems	: addItems,
+			navigate	: navigate
 		};
 	
 	})();
-
 	Gallery.init();
 	
 	for(var i=1;i<100;i++)
 	{
-		var $new  = $('<li><a href="#"><img src="assets/dicom/' + i + '.png" data-large="assets/dicom/' + i + '.png" clasll="leap-interactive" alt="image' + i + '"/></a></li>');
+		var $new  = $('<li><a href="#"><img src="assets/dicom/' + i + '.png" data-large="assets/dicom/' + i + '.png"  alt="image' + i + '"/></a></li>');
 		Gallery.addItems( $new );
 	}
 	/*

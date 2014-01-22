@@ -1,4 +1,5 @@
-img.logo { width: 500px; }
-img.sellogo { width: 250px;}
+img.logo { width: 250px; }
+img.sellogo { width: 125px;}
+img.dicom { width:40%; height:40%}
 #header {padding-top:2%;}
 #canvas {height:100%;width:100%;}
