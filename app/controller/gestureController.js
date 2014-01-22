@@ -1,4 +1,5 @@
 function onGesture( gesture ) {
+	resetSize();
 	var type = gesture.type;
 
 	switch( type ){
@@ -22,12 +23,17 @@ function onGesture( gesture ) {
 }
 
 function onCircle( gesture ) {
-	console.log(gesture);
-	Gallery.navigate("right");
+	if(gesture.state == "update")
+	{
+		Gallery.navigate(getClockDirection(gesture));
+	}
 }
 
 function onSwipe( gesture ) {
-	console.log(gesture);
+	if(gesture.state == "stop")
+	{
+		Gallery.navigate(getSwipeDirection(gesture));
+	}
 }
 
 function onScreenTap( gesture ) {
@@ -35,6 +41,9 @@ function onScreenTap( gesture ) {
 }
 
 function onKeyTap( gesture ) {
+	console.log(gesture);
+	enchanceSize(gesture);
 	
 }
+
 

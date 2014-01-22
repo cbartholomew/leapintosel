@@ -217,7 +217,7 @@ $(function() {
 				
 				$('<img/>').load( function() {
 					
-					$rgGallery.find('div.rg-image').empty().append('<img class="dicom leap-interactive" src="' + largesrc + '"/>');
+					$rgGallery.find('div.rg-image').empty().append('<img class="dicom" src="' + largesrc + '"/>');
 					
 					if( title )
 						$rgGallery.find('div.rg-caption').show().children('p').empty().text( title );
