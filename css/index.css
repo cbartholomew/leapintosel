@@ -3,3 +3,17 @@ img.sellogo { width: 125px;}
 img.dicom { width:60%; height:60%}
 #header {padding-top:2%;}
 #canvas {height:100%;width:100%;}
+#patient
+{
+	background:#1F1F1F url(../assets/images/pattern.png) repeat top left; 
+	color:#fff;
+	font-family: 'PT Sans Narrow', Arial, sans-serif;
+}
+.patientheader{
+	background-color:#1F1F1F;
+	color:#fff;
+	font-family: 'PT Sans Narrow', Arial, sans-serif;
+	border: solid;
+	border-size: 1px;
+	border-color:#D3D3D3;
+}
