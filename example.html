@@ -85,14 +85,9 @@
 <script src="app/view/canvas.js" type="text/javascript" charset="utf-8"></script>
 <script src="app/utilities/connectionUtility.js" type="text/javascript" charset="utf-8"></script>
 <script src="app/controller/connectionController.js" type="text/javascript" charset="utf-8"></script>
+<script src="app/controller/gestureController.js" type="text/javascript" charset="utf-8"></script>
 <script src="js/gallery.js" type="text/javascript" charset="utf-8"></script>
 <script>
-	var SWIPE_RIGHT = 
-	function handleGesture(gesture)
-	{
-	
-	}
-	
 	LeapManager.init({
 		enableMetaGestures: true,
 		enableDefaultMetaGestureActions: false,
@@ -102,6 +97,6 @@
 		enableTouchScrolling: false,
 		enableScrollbarScrolling: true,
 		simulateWithMouse:false,
-		gestureCallback: handleGesture
+		gestureCallback: onGesture
 	});
 </script>
