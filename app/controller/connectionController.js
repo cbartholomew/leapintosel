@@ -58,6 +58,7 @@ function leapToScene( frame , leapPos , canvas) {
   	return [ x , -y ];
 }
 
+
 // assign events to controller
 controller.on('connect', onControllerConnect);
 controller.on('disconnect', onControllerDisconnect);
